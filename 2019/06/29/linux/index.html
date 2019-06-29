@@ -1,511 +1,154 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  
+  <title>linux | Hexo</title>
+  <meta name="author" content="Zhuzhenxing">
 
-    
+  
+  <meta name="description" content="第一章    Linux 与 Window 的区别    相同点    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；    都支持多种网络协议，如TCP/IP    都">
+  
 
-    
-    <title>linux | Hexo</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-        <meta name="keywords" content>
-    
-    <meta name="description" content="第一章    Linux 与 Window 的区别    相同点    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；    都支持多种网络协议，如TCP/IP    都可以提供网络服务能力，如DHCP和DNS 第二章•    终端和shell的概念o    终端:“终">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux">
-<meta property="og:url" content="http://ZhuXianSheng97.coding.me/2019/06/29/linux/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="第一章    Linux 与 Window 的区别    相同点    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；    都支持多种网络协议，如TCP/IP    都可以提供网络服务能力，如DHCP和DNS 第二章•    终端和shell的概念o    终端:“终">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-29T09:02:09.096Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux">
-<meta name="twitter:description" content="第一章    Linux 与 Window 的区别    相同点    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；    都支持多种网络协议，如TCP/IP    都可以提供网络服务能力，如DHCP和DNS 第二章•    终端和shell的概念o    终端:“终">
-    
+  
 
-    
-        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml">
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+  <meta property="og:title" content="linux">
+  <meta property="og:site_name" content="Hexo">
 
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+  
+  
 
-    <link rel="stylesheet" href="/css/style.css">
+  
+    <meta property="og:image" content>
+  
 
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
+  
+  <link href="/css/images/favicon.ico" rel="icon">
+  
 
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
 
 </head>
 </html>
+
 <body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Accueil</a>
-                                </li>
-                            
-                                        
-                                    
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">À propos</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Écrivez quelque chose..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Hexo</a></h1>
+  <h2><a href="/"></a></h2>
 </div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Articles',
-            PAGES: 'Pages',
-            CATEGORIES: 'Catégories',
-            TAGS: 'Tags',
-            UNTITLED: '(Sans titre)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+<nav id="main-nav" class="alignright">
+  <ul>
     
-    Aucune catégorie
-    </h1>
-</div>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-06-29T07:36:28.000Z"><a href="/2019/06/29/linux/">2019-06-29</a></time>
+      
+      
+  
+    <h1 class="title">linux</h1>
+  
 
-                        <div class="main-body-content">
-                            <article id="post-linux" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        linux
-        </h1>
-    
-
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/06/29/linux/" class="article-date">
-            <time datetime="2019-06-29T07:36:28.000Z" itemprop="datePublished">2019-06-29</time>
-        </a>
-    </div>
-
-		
-
-                
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>第一章<br>    Linux 与 Window 的区别<br>    相同点<br>    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限<br>    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；<br>    都支持多种网络协议，如TCP/IP<br>    都可以提供网络服务能力，如DHCP和DNS</p>
+    </header>
+    <div class="entry">
+      
+        <p>第一章<br>    Linux 与 Window 的区别<br>    相同点<br>    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限<br>    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；<br>    都支持多种网络协议，如TCP/IP<br>    都可以提供网络服务能力，如DHCP和DNS</p>
 <p>第二章<br>•    终端和shell的概念<br>o    终端:“终端”的概念来源于早期计算机时代，例如在Unix中，类似于显示器可以操纵计算机主机的输入/输出设备叫做终端。经过技术演进，终端逐渐被显示器和键盘取代。<br>o    Shell:Shell的原意是指操作系统的外壳程序，在Shell中用户可以通过Shell提供的命令程序与操作系统进行交互以完成相关工作。<br>•    提示符 查看帮助 安装软件命令<br>o    提示符:Shell命令输入提示符，简称提示符，默认情况下提示符是一个”$”符号，其后是光标.<br>    $ 提示符前面的信息是“用户名和路径信息”其格式如下：<br>&lt;用户名&gt;@&lt;计算机名&gt;:&lt;当前目录&gt;<br>o    “~” 表示当前用户主目录<br>o    查看帮助:<br>    man(Manual) :用于查看外部命令手册<br>    help:用于查看内部命令手册<br>另外，部分外部命令还可以通过其自身的选项“-help”来查看帮助.<br>o    安装软件命令<br>    搜索软件: apt-cache search &lt;软件包名&gt;<br>E.G. apt-cache search gedit<br>    安装软件:apt-get install &lt;软件包名&gt;<br>E.G. sudo apt-get install gedit (ubuntu 下安装软件需要管理员权限)<br>    删除软件:apt-get remove &lt;软件报名&gt;<br>E.G. sudo apt-get remove gedit (ubuntu 下删除软件需要管理员权限)<br>o    列出目录内容: ls -[option] [Dir or File]<br>    -a 显示目录下所有子目录与文件,包括隐藏文件.<br>    -l采用长格式来显示文件的详细信息<br>E.G. ls -l /usr<br>•    文本编辑器<br>o    gedit: 图形化文本编辑程序<br>o    vim : 在Shell 中运行的基于命令行的文本编辑器.<br>    三种模式</p>
 <p>    正常模式: :也叫命令模式，Vim刚启动时处于该模式下，可以输入各种命令来控制Vim；<br>    文本模式：在该模式下可以进行文字输入<br>    命令行模式： 也叫底行模式，在该模式下可以在Vim的最下面一行输入命令来控制Vim，例如文件的保存、Vim的退出等。<br>Note: 文本模式和命令行模式不可互换<br>    vim启动<br>E.G. vim &lt;文件名&gt;<br>    vim 关闭<br>命令模式下：q<br>    vim 保存<br>命令模式下：w<br>第三章<br>•    基本目录命令<br>o    pwd(Print working directory) :显示当前所在目录的绝对路径<br>E.G. pwd<br>o    mkdir :创建新目录 mkdir [-option] &lt;目录名&gt;<br>    -m (mode) 设置目录权限，方法同chmod<br>    -p 创建存在中间路径的目录<br>E.G<br>mkdir shilingfeng<br>mkdir -p shi/ling/feng<br>o    cd (change directory) : 改变目录 cd [dir]<br>Note:<br>    cd : 进入用户主目录<br>    cd ~ 进入用户主目录<br>    cd - 返回进入此目录之前所在目录<br>    cd .. 返回上级目录<br>    cd ../ 返回进入此目录前所在的目录<br>o    rmdir （remove directory）删除制定目录rmdir [-option] &lt;文件名&gt;<br>    -p 当子目录被删除后，若父目录为空目录，则此父目录一并删除<br>    -v 提示删除操作成功<br>E.G. rmdir -pv shi/ling/feng<br>Note: rmdir 只能删除空目录</p>
 
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://ZhuXianSheng97.coding.me/2019/06/29/linux/" data-id="cjxhavao50000eww064tkyg47" class="article-share-link"><i class="fa fa-share"></i>Partager</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+      
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "zhuzhenxing"
-        },
-        "headline": "linux",
-        "image": "http://ZhuXianSheng97.coding.me",
-        "keywords": "",
-        "genre": "",
-        "datePublished": "2019-06-29",
-        "dateCreated": "2019-06-29",
-        "dateModified": "2019-06-29",
-        "url": "http://ZhuXianSheng97.coding.me/2019/06/29/linux/",
-        "description": "第一章    Linux 与 Window 的区别    相同点    都是多用户操作系统，都可以由许多不同的用户来使用，都可以以组成员的方式来控制资源的访问权限    都支持多文件系统，文件资源可以通过FTP或者其他协议与其他客户机共享；    都支持多种网络协议，如TCP/IP    都可以提供网络服务能力，如DHCP和DNS
-第二章•    终端和shell的概念o    终端:“终"
-        "wordCount": 280
-    }
-</script>
-
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
 </article>
 
-    <section id="comments">
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:ZhuXianSheng97.coding.me">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+      <li>
+        <a href="/2019/06/29/linux/">linux</a>
+      </li>
     
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>suivre:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-google-plus"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
+      <li>
+        <a href="/2019/06/29/hello-world/">Hello World</a>
+      </li>
     
-        
-<nav id="article-nav">
-    
-    
-        <a href="/2019/06/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">- récent</strong>
-        <p class="article-nav-title">Hello World</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">récents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/06/29/linux/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/06/29/linux/" class="title">linux</a></p>
-                            <p class="item-date"><time datetime="2019-06-29T07:36:28.000Z" itemprop="datePublished">2019-06-29</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/06/29/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/06/29/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2019-06-29T06:53:25.007Z" itemprop="datePublished">2019-06-29</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
+  </ul>
+</div>
 
 
-            
-                
+  
 
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">liens</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
+  
 </aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2019 Zhuzhenxing
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
 
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2019 zhuzhenxing</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-            <div class="footer-plugins">
-              
-    
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
-            </div>
-        </div>
-    </div>
-</footer>
-
-        
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://ZhuXianSheng97.coding.me/2019/06/29/linux/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
+<div id='bg'></div>
 </body>
 </html>
